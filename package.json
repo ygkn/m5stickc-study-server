@@ -6,6 +6,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "ts-node-dev src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
     "format": "prettier --write .",
     "check": "npm-run-all check:*",
     "check:format": "prettier --write .",
