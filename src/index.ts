@@ -2,7 +2,7 @@ import fastify from 'fastify';
 
 const server = fastify();
 
-server.get('/', async (request, reply) => {
+server.get('/', async () => {
   return 'Hello!\n';
 });
 
