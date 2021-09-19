@@ -1,16 +1,26 @@
 import fastify from 'fastify';
+import { env } from './env';
 
 const server = fastify();
+
+env(server);
 
 server.get('/', async () => {
   return 'Hello!\n';
 });
 
-server.listen(8080, (err, address) => {
-  if (err) {
-    console.error(err);
-    process.exit(1);
-  }
+(async () => {
+  await server.ready();
 
-  console.log(`Server listening at ${address}`);
-});
+  server.listen(
+    { port: server.config.PORT, host: server.config.HOST },
+    (err, address) => {
+      if (err) {
+        console.error(err);
+        process.exit(1);
+      }
+
+      console.log(`Server listening at ${address}`);
+    }
+  );
+})();
