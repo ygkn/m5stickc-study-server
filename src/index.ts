@@ -9,6 +9,19 @@ server.get('/', async () => {
   return 'Hello!\n';
 });
 
+server.put(
+  '/acceleration',
+  {
+    schema: {
+      body: {},
+    },
+  },
+  async (request) => {
+    console.log(request.body);
+    return 'OK';
+  }
+);
+
 (async () => {
   await server.ready();
 
