@@ -1,0 +1,8 @@
+{
+  "name": "m5stickc-study-server",
+  "version": "1.0.0",
+  "repository": "https://github.com/ygkn/m5stickc-study-server.git",
+  "author": "ygkn <2000ygkn0713@gmail.com>",
+  "license": "MIT",
+  "private": true
+}
